@@ -36,9 +36,7 @@ public class Task3 {
         System.out.println("--------------------");
 
         try {
-            Object obj = "cool nice amazing";
-            Integer x = (Integer) obj;
-            System.out.println(x);
+            Integer num = (Integer) (Object) "cool nice amazing";
         } catch (ClassCastException e) {
             System.out.println("Invalid type");
         }
