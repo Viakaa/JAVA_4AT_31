@@ -17,7 +17,7 @@ public class Task6 {
 
         session = HibernateUtil.getSessionFactory().openSession();
         Address addressRead = session.get(Address.class, newAddress.getId());
-        System.out.println("Read Address: " + addressRead);
+        System.out.println( addressRead);
         session.close();
 
         session = HibernateUtil.getSessionFactory().openSession();
