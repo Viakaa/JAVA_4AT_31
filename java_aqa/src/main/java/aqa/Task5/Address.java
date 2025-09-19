@@ -1,4 +1,4 @@
-package aqa.Task4;
+package aqa.Task5;
 
 import java.io.Serializable;
 
@@ -8,6 +8,7 @@ class Address implements Serializable {
     private int zip;
 
     public void setCity(String city) { this.city = city; }
+    public String getCity() {return city;}
     public String getState() { return state; }
     public void setState(String state) { this.state = state; }
     public int getZip() { return zip; }
