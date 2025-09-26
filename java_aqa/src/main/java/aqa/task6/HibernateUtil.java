@@ -1,4 +1,4 @@
-package aqa.Task6;
+package aqa.task6;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

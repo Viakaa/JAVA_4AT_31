@@ -1,4 +1,4 @@
-    package aqa.Task5;
+    package aqa.task5;
 
     import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package aqa.Task6;
+package aqa.task6;
 //General:
 //Install MySQL server (or any SQL like db)
 //Make at least two tables (entities from the previous task)
@@ -38,7 +38,7 @@ public class Task6 {
         HibernateUtil.shutdown();
     }
 
-    private static Address createAddress() {
+    public static Address createAddress() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         Address address = new Address(

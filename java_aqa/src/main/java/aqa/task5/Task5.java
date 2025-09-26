@@ -1,4 +1,4 @@
-package aqa.Task5;
+package aqa.task5;
 
 //Serialization-Deserialization:
 // a) Make some complex models using your variant.
