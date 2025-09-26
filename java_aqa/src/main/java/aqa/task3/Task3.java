@@ -1,4 +1,4 @@
-package aqa;
+package aqa.task3;
 //Make ArrayList from the result array and perform the following operations:
 // a) Add an element to the end of the list;
 // b) Remove an element from the list;
