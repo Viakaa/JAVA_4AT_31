@@ -1,23 +1,18 @@
-package task12;
-//General
-//Implement PageFactory for a few pages.
-//Implement a Wrapper for common WebElements (choose your variant).
-//Implement methods for your web element with console logging. (Choose your variant with specific methods)
-//Use those methods in a simple TC scenario
-//Checkboxes:
-//check - checks a checkbox
-//uncheck - unchecks a checkbox
-//isSelected - checks if the checkbox is selected
+package task13;
+
 import aqa.task11.DriverProvider;
 import aqa.task12.CheckBoxBusinessObject;
+import aqa.task13.CustomListener;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-public class Task12Test {
+@Listeners(CustomListener.class)
+public class Task13Test {
     WebDriver driver;
 
     @BeforeTest
@@ -28,7 +23,7 @@ public class Task12Test {
     }
 
     @Test
-    public void test12() {
+    public void test13() {
         CheckBoxBusinessObject businessObject = new CheckBoxBusinessObject();
         businessObject.checkBox();
     }
