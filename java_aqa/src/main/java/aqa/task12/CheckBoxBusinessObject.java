@@ -8,6 +8,7 @@ import java.time.Duration;
 import static aqa.task11.DriverProvider.driver;
 
 public class CheckBoxBusinessObject {
+
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     CheckBoxPageObject page = new CheckBoxPageObject(driver);
 
