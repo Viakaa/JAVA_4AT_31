@@ -2,36 +2,51 @@ package aqa.task12;
 
 import org.openqa.selenium.WebElement;
 
-public class A extends Element{
+public class A extends Element {
 
     public A(WebElement webElement) {
         super(webElement);
     }
 
     public void click() {
+        validate();
+        System.out.println("Clicking element");
         webElement.click();
     }
 
     public void check() {
+        validate();
         if (!webElement.isSelected()) {
             System.out.println("Checking checkbox");
             webElement.click();
         } else {
-            System.out.println("Checkbox is already checked.");
+            System.out.println("Checkbox already checked");
         }
     }
 
     public void uncheck() {
+        validate();
         if (webElement.isSelected()) {
             System.out.println("Unchecking checkbox");
             webElement.click();
         } else {
-            System.out.println("Checkbox is already unchecked.");
+            System.out.println("Checkbox already unchecked");
         }
     }
 
-    public void isSelected() {
+    public boolean isSelected() {
+        validate();
         boolean selected = webElement.isSelected();
         System.out.println("Checkbox selected: " + selected);
+        return selected;
+    }
+
+    private void validate() {
+        if (!webElement.isDisplayed()) {
+            throw new IllegalStateException("Element not visible on page!");
+        }
+        if (!webElement.isEnabled()) {
+            throw new IllegalStateException("Element not enabled!");
+        }
     }
 }

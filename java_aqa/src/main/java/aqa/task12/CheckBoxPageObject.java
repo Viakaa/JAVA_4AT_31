@@ -10,35 +10,35 @@ public class CheckBoxPageObject {
     WebDriver driver;
 
     @FindBy(xpath = "//li/span[text()='Check Box']")
-    private WebElement checkBoxMenu;
+    private A checkBoxMenu;
 
     @FindBy(xpath = "//button[contains(@class,'rct-collapse-btn')]")
-    private WebElement toggleButton;
+    private A toggleButton;
 
     @FindBy(xpath = "//label[contains(@for, 'tree-node-desktop')]/span[contains(@class, 'rct-checkbox')]")
-    private WebElement desktopCheckbox;
+    private A desktopCheckbox;
 
     @FindBy(xpath = "//label[contains(@for, 'tree-node-downloads')]/span[contains(@class, 'rct-checkbox')]")
-    private WebElement downloadsCheckbox;
+    private A downloadsCheckbox;
 
     public CheckBoxPageObject(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(new CustomDecorator(driver), this);
     }
 
     public A getCheckBoxMenu() {
-        return new A(checkBoxMenu);
+        return checkBoxMenu;
     }
 
     public A getToggleButton() {
-        return new A(toggleButton);
+        return toggleButton;
     }
 
     public A getDesktopCheckbox() {
-        return new A(desktopCheckbox);
+        return desktopCheckbox;
     }
 
     public A getDownloadsCheckbox() {
-        return new A(downloadsCheckbox);
+        return downloadsCheckbox;
     }
 }
