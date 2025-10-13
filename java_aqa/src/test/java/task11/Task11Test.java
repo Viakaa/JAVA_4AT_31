@@ -1,6 +1,8 @@
 package task11;
 
+import aqa.task11.ContactPage;
 import aqa.task11.DriverProvider;
+import aqa.task11.HomePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;

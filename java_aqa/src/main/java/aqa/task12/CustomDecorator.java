@@ -2,7 +2,6 @@ package aqa.task12;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocator;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
@@ -35,6 +34,6 @@ public class CustomDecorator implements FieldDecorator {
                 (proxy1, method, args) -> method.invoke(locator.findElement(), args)
         );
 
-        return new A(proxy);
+        return new Checkbox(proxy);
     }
 }

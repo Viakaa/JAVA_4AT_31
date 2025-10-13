@@ -2,9 +2,9 @@ package aqa.task12;
 
 import org.openqa.selenium.WebElement;
 
-public class A extends Element {
+public class Checkbox extends Element {
 
-    public A(WebElement webElement) {
+    public Checkbox(WebElement webElement) {
         super(webElement);
     }
 
