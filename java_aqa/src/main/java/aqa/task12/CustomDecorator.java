@@ -19,21 +19,35 @@ public class CustomDecorator implements FieldDecorator {
 
     @Override
     public Object decorate(ClassLoader loader, Field field) {
-        if (!WebElement.class.isAssignableFrom(field.getType())) {
-            return null;
+        if (field.getType().isAssignableFrom(Checkbox.class)) {
+            ElementLocator locator = factory.createLocator(field);
+            if (locator == null) {
+                return null;
+            }
+
+            WebElement proxy = (WebElement) Proxy.newProxyInstance(
+                    loader,
+                    new Class[]{WebElement.class},
+                    (proxy1, method, args) -> method.invoke(locator.findElement(), args)
+            );
+
+            return new Checkbox(proxy);
         }
 
-        ElementLocator locator = factory.createLocator(field);
-        if (locator == null) {
-            return null;
+        if (WebElement.class.isAssignableFrom(field.getType())) {
+            ElementLocator locator = factory.createLocator(field);
+            if (locator == null) {
+                return null;
+            }
+
+            return Proxy.newProxyInstance(
+                    loader,
+                    new Class[]{WebElement.class},
+                    (proxy, method, args) -> method.invoke(locator.findElement(), args)
+            );
         }
 
-        WebElement proxy = (WebElement) Proxy.newProxyInstance(
-                loader,
-                new Class[]{WebElement.class},
-                (proxy1, method, args) -> method.invoke(locator.findElement(), args)
-        );
-
-        return new Checkbox(proxy);
+        return null;
     }
+
 }
