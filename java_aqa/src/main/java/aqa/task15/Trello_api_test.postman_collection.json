@@ -12,14 +12,30 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://api.trello.com/1/organizations?displayName=testOrganization&key={{trelloKey}}&token={{trelloToken}}",
+					"raw": "https://api.trello.com/1/organizations?displayName=testOrganization&key=a23989194d13c756c9259629f5376321&token=ATTA52511a09278163a7d844934bc1b2b03454d63715efdc3b4e2c207326773dce831AFEB56A",
 					"protocol": "https",
-					"host": ["api", "trello", "com"],
-					"path": ["1", "organizations"],
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"organizations"
+					],
 					"query": [
-						{ "key": "displayName", "value": "testOrganization" },
-						{ "key": "key", "value": "{{trelloKey}}" },
-						{ "key": "token", "value": "{{trelloToken}}" }
+						{
+							"key": "displayName",
+							"value": "testOrganization"
+						},
+						{
+							"key": "key",
+							"value": "a23989194d13c756c9259629f5376321"
+						},
+						{
+							"key": "token",
+							"value": "ATTA52511a09278163a7d844934bc1b2b03454d63715efdc3b4e2c207326773dce831AFEB56A"
+						}
 					]
 				}
 			},
@@ -31,24 +47,180 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://api.trello.com/1/boards/?name={name}&key={{trelloKey}}&token={{trelloToken}}",
+					"raw": "https://api.trello.com/1/boards/?name={name}&key=APIKey&token=APIToken",
 					"protocol": "https",
-					"host": ["api", "trello", "com"],
-					"path": ["1", "boards"],
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
 					"query": [
-						{ "key": "name", "value": "{name}" },
-						{ "key": "key", "value": "{{trelloKey}}" },
-						{ "key": "token", "value": "{{trelloToken}}" }
+						{
+							"key": "name",
+							"value": "{name}"
+						},
+						{
+							"key": "key",
+							"value": "APIKey"
+						},
+						{
+							"key": "token",
+							"value": "APIToken"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "create custom field",
+			"name": "create card",
 			"request": {
 				"method": "POST",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList=5abbe4b7ddc1b351ef961414&key={{trelloKey}}&token={{trelloToken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "5abbe4b7ddc1b351ef961414"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists?name={name}&idBoard=5abbe4b7ddc1b351ef961414&key=APIKey&token=APIToken",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{name}"
+						},
+						{
+							"key": "idBoard",
+							"value": "5abbe4b7ddc1b351ef961414"
+						},
+						{
+							"key": "key",
+							"value": "APIKey"
+						},
+						{
+							"key": "token",
+							"value": "APIToken"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update due date",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/?key={{trelloKey}}&token={{trelloToken}}\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete due date",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"due\": null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trello.com/1/cards/68f90831c842f4071abc2914?key={{trelloKey}}&token={{trelloToken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"68f90831c842f4071abc2914"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						}
+					]
+				}
 			},
 			"response": []
 		}
