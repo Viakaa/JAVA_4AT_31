@@ -37,7 +37,7 @@ public class Task20Test {
         double expected = 12.5 * 3.2;
         double actual = Double.parseDouble(result);
 
-        assert actual == expected : "Multiplication result mismatch! Expected: " + expected + ", Actual: " + actual;
+        assert actual == expected : "Multiplication result mismatch Expected: " + expected + ", Actual: " + actual;
 
         driver.quit();
     }
